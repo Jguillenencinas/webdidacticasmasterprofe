@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu Lateral</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+        <div class="sidebar-sticky">
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link active" href="#html">HTML</a>
+              <ul class="nav flex-column">
+                <li class="nav-item">
+                  <a class="nav-link" href="#html-teoria">Teoría</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#html-video">Vídeo</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#html-ejercicio">Ejercicio</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#css">CSS</a>
+              <ul class="nav flex-column">
+                <li class="nav-item">
+                  <a class="nav-link" href="#css-teoria">Teoría</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#css-video">Vídeo</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#css-ejercicio">Ejercicio</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#javascript">JavaScript</a>
+              <ul class="nav flex-column">
+                <li class="nav-item">
+                  <a class="nav-link" href="#javascript-teoria">Teoría</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#javascript-video">Vídeo</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#javascript-ejercicio">Ejercicio</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+        <div id="html-teoria" class="d-none">
+          <h2>Teoría de HTML</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vestibulum justo at est commodo, a ultrices metus fermentum. Nulla facilisi. Sed suscipit ultricies libero id feugiat.</p>
+        </div>
+        <div id="html-video" class="d-none">
+          <h2>Vídeo de HTML</h2>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/dwXlegcrEcU" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div id="html-ejercicio" class="d-none">
+          <h2>Ejercicio de HTML</h2>
+          <p>Aquí puedes realizar el ejercicio de HTML.</p>
+        </div>
+        
+        <!-- Repetir para CSS y JavaScript -->
+
+      </main>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('.nav-link').on('click', function() {
+        var target = $(this).attr('href');
+        $('.d-none').hide();
+        $(target).removeClass('d-none');
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Autoevaluación HTML, CSS y JavaScript</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/autoevaluacion.css">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+   <header class="container-fluid bg-secondary d-flex justify-content-center fixed-top">
+        <nav  class="navbar navbar-expand-lg navbar-light p-3"  id="menu">
+          <div class="container">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Inicio</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="aulainvertida.html">Metodología</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="aulainvertida.html">Contenido</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="autoevaluacion.html">Autoevaluación</a>
+                </li>
+              </ul>
+              <!--<form class="d-flex">
+                <input class="form-control me-2" type="email" placeholder="Correo Electronico" aria-label="Suscribete">
+                <button class="btn btn-primary btn-primary-outline-success" type="button">Suscribete</button>
+              </form>-->
+            </div>
+          </div>
+        </nav>
+    </header> 
+
+  <div class="container mtcontainer">
+    <h1 class="text-center mb-4">Autoevaluación HTML, CSS y JavaScript</h1>
+    <div id="quizContainer" class="card">
+      <div id="quiz" class="card-body">
+        <!-- Preguntas aquí -->
+      </div>
+      <div class="card-footer text-center">
+        <button id="prevBtn" class="btn btn-secondary mr-2">&lt; Anterior</button>
+        <button id="nextBtn" class="btn btn-primary">Siguiente &gt;</button>
+      </div>
+    </div>
+  </div>
+  <script src="autoevaluacion.js"></script>
+</body>
+</html>
