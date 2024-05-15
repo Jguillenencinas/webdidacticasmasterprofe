@@ -14,6 +14,16 @@ body {
     margin-top: 50px;
 }
 
+#texto-bienvenida{
+    letter-spacing:0.5ch;
+    font-size: x-large;
+}
+
+#texto-somos{
+    font-size: large;
+    margin-bottom:2%;
+}
+
 .headerbg{
     background: #C19A6B;
 }
