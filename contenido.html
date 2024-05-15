@@ -15,7 +15,7 @@
   <!--========================================================== -->
                         <!-- ENCABEZADO -->
   <!--========================================================== -->
-  <header class="container-fluid bg-secondary d-flex justify-content-center fixed-top">
+  <header class="container-fluid headerbg d-flex justify-content-center fixed-top">
     <nav  class="navbar navbar-expand-lg navbar-light p-3"  id="menu">
       <div class="container">
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -33,17 +33,13 @@
               <a class="nav-link" href="autoevaluacion.html">Autoevaluación</a>
             </li>
           </ul>
-          <!--<form class="d-flex">
-            <input class="form-control me-2" type="email" placeholder="Correo Electronico" aria-label="Suscribete">
-            <button class="btn btn-primary btn-primary-outline-success" type="button">Suscribete</button>
-          </form>-->
         </div>
       </div>
     </nav>
   </header>
     <div class="row">
         <div class="col-3">
-            <div class="bg-primary p-3 text-white">
+            <div class="p-3 text-white">
               <nav class="nav">
                 <ul class="list">
         
@@ -56,7 +52,7 @@
         
                         <ul class="list__show">
                             <li class="list__inside">
-                                <a href="#" class="nav__link nav__link--inside">Header</a>
+                                <a onclick="changeVideo('FTrZ-QQgCP8?si=fpeSQbxZnpjkeX4k')" href="#" class="nav__link nav__link--inside">Header</a>
                             </li>
         
                             <li class="list__inside">
@@ -107,14 +103,13 @@
           </nav>
             </div>
         </div>
-        <div class="col-8">
+        <div class="colorcontenido col-9">
           <div class="mtcontainer p-3 text-center text-white">
             <!-- Video de YouTube centrado -->
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/TFBfUorLbss" frameborder="0" allowfullscreen></iframe>
+            <iframe id="video-frame" width="560" height="315" src="https://www.youtube.com/embed/TFBfUorLbss" frameborder="0" allowfullscreen></iframe>
           </div>
           <div class="mtcontainer p-3 text-center text-white">
-          <!-- Video de YouTube centrado -->
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/TFBfUorLbss" frameborder="0" allowfullscreen></iframe>
+          <img src="./img/header.png"  alt="Elemento header">
           </div>
         </div>
     </div>

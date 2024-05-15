@@ -16,3 +16,7 @@ listElements.forEach(listElement => {
     })
 });
 
+function changeVideo(videoId) {
+    const videoFrame = document.getElementById('video-frame');
+    videoFrame.src = `https://www.youtube.com/embed/${videoId}`;
+}
