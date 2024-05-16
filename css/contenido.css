@@ -15,6 +15,12 @@ body{
     background-color: #F5F5DC;
 }
 
+.buttonbg{
+    background: #C19A6B;
+    width: 360px;
+    margin: auto;
+}
+
 .img-content{
     width: 560px;
     height: 315px;

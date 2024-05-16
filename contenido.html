@@ -50,7 +50,7 @@
         
                         <ul class="list__show">
                             <li class="list__inside">
-                                <a onclick="changeVideo('FTrZ-QQgCP8?si=fpeSQbxZnpjkeX4k')" href="#" class="nav__link nav__link--inside">Header</a>
+                                <a onclick="changeVideo('FTrZ-QQgCP8?si=fpeSQbxZnpjkeX4k'); changeLink('www.w3schools.com/tags/tag_header.asp'); changePic('Header.JPG')" href="#" class="nav__link nav__link--inside">Header</a>
                             </li>
         
                             <li class="list__inside">
@@ -102,12 +102,15 @@
             </div>
         </div>
         <div class="colorcontenido col-9">
-          <div class="mtcontainer p-3 text-center text-white">
+          <div id="video" class="mtcontainer p-3 text-center text-white">
             <!-- Video de YouTube centrado -->
-            <iframe id="video-frame" width="560" height="315" src="https://www.youtube.com/embed/TFBfUorLbss" frameborder="0" allowfullscreen></iframe>
+            <iframe id="video-frame" style="opacity: 0;" width="560" height="315" src="https://www.youtube.com/embed/TFBfUorLbss" frameborder="0" allowfullscreen></iframe>
           </div>
           <div class="mtcontainer p-3 text-center text-white">
-          <!-- <img src="./img/header.png"  alt="Elemento header"> -->
+            <img id="pic-frame" style="opacity: 0;" src="./img/header.png"> 
+          </div>
+          <div id="link-div" style="opacity: 0;" class="mtcontainer p-3 text-center text-white rounded buttonbg">
+            <a id="link-frame" href="contenido.html" target="_blank" style="font-weight: bold;" class="btn mt-auto text-white">Aprende más</a> 
           </div>
         </div>
     </div>

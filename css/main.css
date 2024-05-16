@@ -28,6 +28,10 @@ body {
     background: #C19A6B;
 }
 
+.learnHomeClassbg{
+    background-color: #F5F5DC;
+}
+
 .pantalla-completa {
     width: 30%;
     height: 100%;
@@ -146,7 +150,7 @@ body {
 /*=========================FOOTER================================*/
 
 footer {
-    background: #1b2a4e;
+    background: #a87e4a;
     min-height: 100px;;
 }
 footer p{
