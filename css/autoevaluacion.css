@@ -1,17 +1,33 @@
-.container {
-    max-width: 600px;
-    margin: 0 auto;
-  }
-  
-  .card {
-    margin-bottom: 20px;
-  }
-  
-  .card-body {
-    position: relative;
-  }
-  
-  .card-footer {
-    background-color: #f8f9fa;
-  }
-  
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+
+form div {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+button {
+  display: inline-block;
+  margin-top: 20px;
+  margin-right: 10px;
+}
+
+.feedback {
+  display: none;
+  color: red;
+}
+
+#result {
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+.question {
+  display: none;
+}

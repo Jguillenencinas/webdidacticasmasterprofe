@@ -1,95 +1,65 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const preguntas = [
-      {
-        pregunta: "¿Qué lenguaje se utiliza para estructurar el contenido de una página web?",
-        respuestaCorrecta: "html"
-      },
-      {
-        pregunta: "¿Qué lenguaje se utiliza para dar estilo a una página web?",
-        respuestaCorrecta: "css"
-      },
-      {
-        pregunta: "¿Qué lenguaje se utiliza para agregar interactividad a una página web?",
-        respuestaCorrecta: "javascript"
-      }
-    ];
-  
-    let preguntaIndex = 0;
-    let respuestasCorrectas = 0;
-  
-    const quizContainer = document.getElementById('quizContainer');
-    const quiz = document.getElementById('quiz');
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
-    const submitBtn = document.getElementById('submitBtn');
-  
-    function mostrarPregunta(index) {
-      quiz.innerHTML = `<p>${preguntas[index].pregunta}</p>
-                        <input type="text" id="respuestaInput" placeholder="Escribe tu respuesta aquí">
-                        <p id="respuestaMensaje" class="text-danger"></p>`;
+$(document).ready(function() {
+  $("#testForm").submit(function(event) {
+    event.preventDefault();
+    
+    // Obtener respuestas
+    var preguntaHTML = $("#preguntaHTML").val().trim().toLowerCase();
+    var respuestaRadioCSS = $("input[name='respuestaRadioCSS']:checked").val();
+    var respuestaSelectJS = $("#respuestaSelectJS").val();
+    var respuestaCheckboxHTML = $("input[name='respuestaCheckboxHTML[]']:checked").map(function() {
+      return $(this).val();
+    }).get();
+    var respuestaSelectMultipleJS = $("#respuestaSelectMultipleJS").val();
+    
+    // Variables para almacenar respuestas correctas e incorrectas y opciones correctas
+    var respuestasCorrectas = 0;
+    var respuestasIncorrectas = 0;
+    var opcionesCorrectas = {
+      preguntaHTML: "hyper text markup language",
+      respuestaRadioCSS: "opcion1",
+      respuestaSelectJS: ["opcion1"],
+      respuestaCheckboxHTML: ["opcion1"],
+      respuestaSelectMultipleJS: ["opcion1"]
+    };
+
+    // Calcular respuestas correctas
+    if (preguntaHTML === opcionesCorrectas.preguntaHTML) respuestasCorrectas++;
+    if (respuestaRadioCSS === opcionesCorrectas.respuestaRadioCSS) respuestasCorrectas++;
+    if (respuestaSelectJS && respuestaSelectJS.includes(opcionesCorrectas.respuestaSelectJS[0])) respuestasCorrectas++;
+    if (respuestaCheckboxHTML && respuestaCheckboxHTML.includes(opcionesCorrectas.respuestaCheckboxHTML[0])) respuestasCorrectas++;
+    if (respuestaSelectMultipleJS && respuestaSelectMultipleJS.includes(opcionesCorrectas.respuestaSelectMultipleJS[0])) respuestasCorrectas++;
+    
+    // Calcular respuestas incorrectas y mostrar opciones correctas
+    if (preguntaHTML !== opcionesCorrectas.preguntaHTML) {
+      respuestasIncorrectas++;
+      $("#preguntaHTML").val(opcionesCorrectas.preguntaHTML);
     }
-  
-    function validarRespuesta(respuestaUsuario, respuestaCorrecta) {
-      return respuestaUsuario.trim().toLowerCase() === respuestaCorrecta;
+    if (respuestaRadioCSS !== opcionesCorrectas.respuestaRadioCSS) {
+      respuestasIncorrectas++;
+      $("input[name='respuestaRadioCSS'][value='" + opcionesCorrectas.respuestaRadioCSS + "']").prop('checked', true);
     }
-  
-    function validarYCorregir() {
-      const respuestaInput = document.getElementById('respuestaInput');
-      const respuestaMensaje = document.getElementById('respuestaMensaje');
-      const respuestaUsuario = respuestaInput.value;
-  
-      if (respuestaUsuario === '') {
-        respuestaMensaje.textContent = 'Por favor, ingresa una respuesta.';
-        return;
-      }
-  
-      if (validarRespuesta(respuestaUsuario, preguntas[preguntaIndex].respuestaCorrecta)) {
-        respuestasCorrectas++;
-      }
-  
-      if (preguntaIndex === preguntas.length - 1) {
-        // Es la última pregunta, mostrar la nota y reiniciar el formulario
-        mostrarNota();
-        reiniciarFormulario();
-      } else {
-        // Pasar a la siguiente pregunta
-        preguntaIndex++;
-        mostrarPregunta(preguntaIndex);
-      }
+    if (respuestaSelectJS && !respuestaSelectJS.includes(opcionesCorrectas.respuestaSelectJS[0])) {
+      respuestasIncorrectas++;
+      $("#respuestaSelectJS").val(opcionesCorrectas.respuestaSelectJS[0]);
     }
-  
-    function mostrarNota() {
-      const nota = `${respuestasCorrectas}/${preguntas.length}`;
-      alert(`Tu nota es: ${nota}`);
+    if (respuestaCheckboxHTML && !respuestaCheckboxHTML.includes(opcionesCorrectas.respuestaCheckboxHTML[0])) {
+      respuestasIncorrectas++;
+      $("input[name='respuestaCheckboxHTML[]'][value='" + opcionesCorrectas.respuestaCheckboxHTML[0] + "']").prop('checked', true);
     }
-  
-    function reiniciarFormulario() {
-      preguntaIndex = 0;
-      respuestasCorrectas = 0;
-      mostrarPregunta(preguntaIndex);
+    if (respuestaSelectMultipleJS && !respuestaSelectMultipleJS.includes(opcionesCorrectas.respuestaSelectMultipleJS[0])) {
+      respuestasIncorrectas++;
+      $("#respuestaSelectMultipleJS").val(opcionesCorrectas.respuestaSelectMultipleJS);
     }
-  
-    mostrarPregunta(preguntaIndex);
-  
-    prevBtn.addEventListener('click', function() {
-      if (preguntaIndex > 0) {
-        preguntaIndex--;
-        mostrarPregunta(preguntaIndex);
-      }
-    });
-  
-    nextBtn.addEventListener('click', function() {
-      validarYCorregir();
-    });
-  
-    quiz.addEventListener('input', function() {
-      const respuestaMensaje = document.getElementById('respuestaMensaje');
-      respuestaMensaje.textContent = '';
-    });
-  
-    submitBtn.addEventListener('click', function(event) {
-      event.preventDefault();
-      validarYCorregir();
-    });
+
+    // Mostrar diálogo antes de mostrar el resultado
+    var mensaje = "Inténtalo de nuevo!\n\nRespuestas correctas: " + respuestasCorrectas + "\nRespuestas incorrectas: " + respuestasIncorrectas + "\n\nReinicia el test para intentarlo de nuevo (verás las respuestas corectas a continuación).";
+    alert(mensaje);
   });
-  
+
+  $("#reiniciar").click(function() {
+    // Limpiar formulario
+    $("#testForm")[0].reset();
+    // Limpiar resultado
+    $("#resultado").empty();
+  });
+});

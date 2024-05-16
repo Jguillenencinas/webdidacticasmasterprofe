@@ -3,52 +3,112 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Autoevaluación HTML, CSS y JavaScript</title>
+  <title>Formulario de Test - HTML, CSS y JS</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/autoevaluacion.css">
   <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-
-   <header class="container-fluid headerbg d-flex justify-content-center fixed-top">
-        <nav  class="navbar navbar-expand-lg navbar-light p-3"  id="menu">
-          <div class="container">
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html">Inicio</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="aulainvertida.html">Metodología</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="contenido.html">Contenido</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="autoevaluacion.html">Autoevaluación</a>
-                </li>
-              </ul>
-              <!--<form class="d-flex">
-                <input class="form-control me-2" type="email" placeholder="Correo Electronico" aria-label="Suscribete">
-                <button class="btn btn-primary btn-primary-outline-success" type="button">Suscribete</button>
-              </form>-->
-            </div>
-          </div>
-        </nav>
-    </header> 
-
-  <div class="container mtcontainer">
-    <h1 class="text-center mb-4">Autoevaluación HTML, CSS y JavaScript</h1>
-    <div id="quizContainer" class="card">
-      <div id="quiz" class="card-body">
-        <!-- Preguntas aquí -->
+  <!--========================================================== -->
+                        <!-- ENCABEZADO -->
+  <!--========================================================== -->
+  <header class="container-fluid headerbg d-flex justify-content-center fixed-top">
+    <nav  class="navbar navbar-expand-lg navbar-light p-3"  id="menu">
+      <div class="container">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="aulainvertida.html">Metodología</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contenido.html">Contenido</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="autoevaluacion.html">Autoevaluación</a>
+            </li>
+          </ul>
+        </div>
       </div>
-      <div class="card-footer text-center">
-        <button id="prevBtn" class="btn btn-secondary mr-2">&lt; Anterior</button>
-        <button id="nextBtn" class="btn btn-primary">Siguiente &gt;</button>
+    </nav>
+  </header> 
+
+  <div class="mtcontainer container">
+    <h1>Formulario de Test - HTML, CSS y JS</h1>
+    <form id="testForm">
+      <div class="form-group">
+        <label for="preguntaHTML">¿Qué significa HTML?</label>
+        <input type="text" class="form-control" id="preguntaHTML" name="preguntaHTML">
       </div>
-    </div>
+      <div class="form-group">
+        <label for="respuestaRadioCSS">¿Cuál de las siguientes opciones es un selector de CSS para seleccionar todos los elementos?</label><br>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="respuestaRadioCSS" id="respuestaRadioCSS1" value="opcion1">
+          <label class="form-check-label" for="respuestaRadioCSS1">
+            *
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="respuestaRadioCSS" id="respuestaRadioCSS2" value="opcion2">
+          <label class="form-check-label" for="respuestaRadioCSS2">
+            #
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="respuestaRadioCSS" id="respuestaRadioCSS3" value="opcion3">
+          <label class="form-check-label" for="respuestaRadioCSS3">
+            .
+          </label>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="respuestaSelectJS">¿Cuál es el tipo de datos de la variable en JavaScript que representa un conjunto de valores lógicos?</label>
+        <select class="form-control" id="respuestaSelectJS" name="respuestaSelectJS">
+          <option value="opcion1">Boolean</option>
+          <option value="opcion2">String</option>
+          <option value="opcion3">Number</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="respuestaCheckboxHTML">¿Cuál es el elemento HTML utilizado para definir un enlace?</label><br>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="respuestaCheckboxHTML1" name="respuestaCheckboxHTML[]" value="opcion1">
+          <label class="form-check-label" for="respuestaCheckboxHTML1">
+            &lt;a&gt;
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="respuestaCheckboxHTML2" name="respuestaCheckboxHTML[]" value="opcion2">
+          <label class="form-check-label" for="respuestaCheckboxHTML2">
+            &lt;div&gt;
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="respuestaCheckboxHTML3" name="respuestaCheckboxHTML[]" value="opcion3">
+          <label class="form-check-label" for="respuestaCheckboxHTML3">
+            &lt;p&gt;
+          </label>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="respuestaSelectMultipleJS">¿Cuál de los siguientes es un método de la clase String en JavaScript para convertir una cadena en mayúsculas?</label>
+        <select class="form-control" id="respuestaSelectMultipleJS" name="respuestaSelectMultipleJS[]" multiple>
+          <option value="opcion1">toUpperCase()</option>
+          <option value="opcion2">toLowerCase()</option>
+          <option value="opcion3">charAt()</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary">Enviar</button>
+    </form>
+    <div id="resultado" class="mt-3"></div>
+    <button id="reiniciar" class="btn btn-secondary mt-3">Reiniciar</button>
   </div>
+  
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <script src="autoevaluacion.js"></script>
 </body>
 </html>
