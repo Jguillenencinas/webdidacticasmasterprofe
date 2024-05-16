@@ -24,7 +24,8 @@ function changeVideo(videoId) {
 
 function changePic(picId) {
     const picFrame = document.getElementById('pic-frame');
-    picFrame.src = `./img/${picId}`;
+    const pic = document.getElementById('pic-Src');
+    pic.src = `./img/${picId}`;
     picFrame.style.opacity = 100;
     picFrame.style.width = picFrame.src.style.width;
     picFrame.style.height = picFrame.src.style.height;
