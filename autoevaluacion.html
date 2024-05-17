@@ -1,114 +1,162 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Formulario de Test - HTML, CSS y JS</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/autoevaluacion.css">
-  <link rel="stylesheet" href="css/main.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autoevaluacion</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/autoevaluacion.css">
+    <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
   <!--========================================================== -->
                         <!-- ENCABEZADO -->
   <!--========================================================== -->
-  <header class="container-fluid headerbg d-flex justify-content-center fixed-top">
-    <nav  class="navbar navbar-expand-lg navbar-light p-3"  id="menu">
-      <div class="container">
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link" href="index.html">Inicio</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="aulainvertida.html">Metodología</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="contenido.html">Contenido</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="autoevaluacion.html">Autoevaluación</a>
-            </li>
-          </ul>
+    <header class="container-fluid headerbg d-flex justify-content-center fixed-top">
+      <nav  class="navbar navbar-expand-lg navbar-light p-3"  id="menu">
+        <div class="container">
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="aulainvertida.html">Metodología</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contenido.html">Contenido</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="autoevaluacion.html">Autoevaluación</a>
+              </li>
+            </ul>
+          </div>
         </div>
-      </div>
-    </nav>
-  </header> 
+      </nav>
+    </header> 
 
-  <div class="mtcontainer container">
-    <h1>Formulario de Test - HTML, CSS y JS</h1>
-    <form id="testForm">
-      <div class="form-group">
-        <label for="preguntaHTML">¿Qué significa HTML?</label>
-        <input type="text" class="form-control" id="preguntaHTML" name="preguntaHTML">
-      </div>
-      <div class="form-group">
-        <label for="respuestaRadioCSS">¿Cuál de las siguientes opciones es un selector de CSS para seleccionar todos los elementos?</label><br>
-        <div class="form-check">
-          <input class="form-check-input" type="radio" name="respuestaRadioCSS" id="respuestaRadioCSS1" value="opcion1">
-          <label class="form-check-label" for="respuestaRadioCSS1">
-            *
-          </label>
+    <div class="container mt-5">
+        <div class="card mtcontainer">
+            <div class="card-header bg-primary text-white">
+                <h4>Autoevaluación: contesta en minúsculas</h4>
+            </div>
+            <div class="card-body">
+                <form id="testForm">
+                    <!-- Pregunta 1 -->
+                    <div class="form-group">
+                        <label for="question1">¿Qué elemento se utiliza para crear una lista no ordenada en HTML?</label>
+                        <input type="text" class="form-control" id="question1" required>
+                    </div>
+                    <!-- Pregunta 2 -->
+                    <div class="form-group">
+                        <label for="question2">2. ¿Cuál es la última versión estable de CSS?</label>
+                        <input type="number" class="form-control" id="question2" required>
+                    </div>
+                    <!-- Pregunta 3 -->
+                    <div class="form-group">
+                        <label for="question3">3. Selecciona el significado de JS</label>
+                        <select class="form-control" id="question3" required>
+                            <option value="">Selecciona una opción</option>
+                            <option value="rojo">HyperText Markup Language</option>
+                            <option value="azul">JavaScript</option>
+                            <option value="verde">Jonh Snow</option>
+                            <option value="amarillo">Cascading Style Sheet</option>
+                        </select>
+                    </div>
+                    <!-- Pregunta 4 -->
+                    <div class="form-group">
+                        <label for="question4">4. ¿JavaScript permite la manipulación del DOM (Document Object Model) en páginas web interactivas? (sí/no)</label>
+                        <input type="text" class="form-control" id="question4" required>
+                    </div>
+                    <!-- Pregunta 5 -->
+                    <div class="form-group">
+                      <label for="question5">5. ¿Cuántas pseudo-clases de enlace existen en CSS?</label>
+                      <input type="number" class="form-control" id="question5" required>
+                  </div>
+                    <!-- Pregunta 6 -->
+                    <div class="form-group">
+                      <label for="question6">6. ¿Cuáles de las siguientes etiquetas HTML se utilizan para agregar imágenes a una página web?</label>
+                      <div id="question6">
+                          <div class="form-check">
+                              <input class="form-check-input" type="checkbox" value="img" id="planetaMercurio">
+                              <label class="form-check-label" for="planetaMercurio">img</label>
+                          </div>
+                          <div class="form-check">
+                              <input class="form-check-input" type="checkbox" value="picture" id="planetaVenus">
+                              <label class="form-check-label" for="planetaVenus">picture</label>
+                          </div>
+                          <div class="form-check">
+                              <input class="form-check-input" type="checkbox" value="tierra" id="planetaTierra">
+                              <label class="form-check-label" for="planetaTierra">image</label>
+                          </div>
+                          <div class="form-check">
+                              <input class="form-check-input" type="checkbox" value="marte" id="planetaMarte">
+                              <label class="form-check-label" for="planetaMarte">photo</label>
+                          </div>
+                          <div class="form-check">
+                              <input class="form-check-input" type="checkbox" value="pluton" id="planetaPluton">
+                              <label class="form-check-label" for="planetaPluton">figure</label>
+                          </div>
+                      </div>
+                  </div>                  
+                    <!-- Pregunta 7 -->
+                    <div class="form-group">
+                        <label for="question7">7. ¿Cuál es el lenguaje de programación principal utilizado para la lógica en el desarrollo web?</label>
+                        <input type="text" class="form-control" id="question7" required>
+                    </div>
+                    <!-- Pregunta 8 -->
+                    <div class="form-group">
+                        <label for="question8">8. ¿Qué lenguaje se utiliza para estructurar el contenido de una página web?</label>
+                        <input type="text" class="form-control" id="question8" required>
+                    </div>
+                    <!-- Pregunta 9 -->
+                    <div class="form-group">
+                        <label for="question9">9. ¿Qué lenguaje se utiliza para aplicar estilos visuales a una página web?</label>
+                        <input type="text" class="form-control" id="question9" required>
+                    </div>
+                    <!-- Pregunta 10 -->
+                    <div class="form-group">
+                      <label for="question10">10. ¿Cuáles de las siguientes etiquetas HTML se utilizan para crear una lista desordenada?</label>
+                      <div id="question10">
+                          <div class="form-check">
+                              <input class="form-check-input" type="checkbox" value="ul" id="ul">
+                              <label class="form-check-label" for="ul">ul</label>
+                          </div>
+                          <div class="form-check">
+                              <input class="form-check-input" type="checkbox" value="li" id="li">
+                              <label class="form-check-label" for="li">li</label>
+                          </div>
+                          <div class="form-check">
+                              <input class="form-check-input" type="checkbox" value="ol" id="ol">
+                              <label class="form-check-label" for="ol">ol</label>
+                          </div>
+                          <div class="form-check">
+                              <input class="form-check-input" type="checkbox" value="dl" id="dl">
+                              <label class="form-check-label" for="dl">dl</label>
+                          </div>
+                      </div>
+                    </div>                  
+                    <button type="button" class="btn btn-primary" onclick="submitForm()">Envia</button>
+                    <button type="reset" class="btn btn-secondary">Reiniciar</button>
+                </form>
+                <div id="feedback" class="mt-3"></div>
+            </div>
         </div>
-        <div class="form-check">
-          <input class="form-check-input" type="radio" name="respuestaRadioCSS" id="respuestaRadioCSS2" value="opcion2">
-          <label class="form-check-label" for="respuestaRadioCSS2">
-            #
-          </label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="radio" name="respuestaRadioCSS" id="respuestaRadioCSS3" value="opcion3">
-          <label class="form-check-label" for="respuestaRadioCSS3">
-            .
-          </label>
-        </div>
-      </div>
-      <div class="form-group">
-        <label for="respuestaSelectJS">¿Cuál es el tipo de datos de la variable en JavaScript que representa un conjunto de valores lógicos?</label>
-        <select class="form-control" id="respuestaSelectJS" name="respuestaSelectJS">
-          <option value="opcion1">Boolean</option>
-          <option value="opcion2">String</option>
-          <option value="opcion3">Number</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="respuestaCheckboxHTML">¿Cuál es el elemento HTML utilizado para definir un enlace?</label><br>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" id="respuestaCheckboxHTML1" name="respuestaCheckboxHTML[]" value="opcion1">
-          <label class="form-check-label" for="respuestaCheckboxHTML1">
-            &lt;a&gt;
-          </label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" id="respuestaCheckboxHTML2" name="respuestaCheckboxHTML[]" value="opcion2">
-          <label class="form-check-label" for="respuestaCheckboxHTML2">
-            &lt;div&gt;
-          </label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" id="respuestaCheckboxHTML3" name="respuestaCheckboxHTML[]" value="opcion3">
-          <label class="form-check-label" for="respuestaCheckboxHTML3">
-            &lt;p&gt;
-          </label>
-        </div>
-      </div>
-      <div class="form-group">
-        <label for="respuestaSelectMultipleJS">¿Cuál de los siguientes es un método de la clase String en JavaScript para convertir una cadena en mayúsculas?</label>
-        <select class="form-control" id="respuestaSelectMultipleJS" name="respuestaSelectMultipleJS[]" multiple>
-          <option value="opcion1">toUpperCase()</option>
-          <option value="opcion2">toLowerCase()</option>
-          <option value="opcion3">charAt()</option>
-        </select>
-      </div>
-      <button type="submit" class="btn btn-primary">Enviar</button>
-    </form>
-    <div id="resultado" class="mt-3"></div>
-    <button id="reiniciar" class="btn btn-secondary mt-3">Reiniciar</button>
-  </div>
+    </div>
   
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <script src="autoevaluacion.js"></script>
+
+<!--========================================================== -->
+                        <!--FOOTER-->
+<!--========================================================== -->
+
+
+<footer class="w-100  d-flex  align-items-center justify-content-center flex-wrap">
+  <p class="fs-5 px-3  pt-3">URJC Grupo F &copy; Creative Commons 2024</p>
+</footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="autoevaluacion.js"></script>
 </body>
 </html>
