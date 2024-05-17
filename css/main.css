@@ -13,6 +13,13 @@ body {
 .mtcontainercontenido{
     margin-top: 50px;
 }
+.mtcontainerautoev{
+    margin-top: 150px;
+}
+
+.centrar{
+    text-align: center;
+}
 
 #texto-bienvenida{
     letter-spacing:0.5ch;

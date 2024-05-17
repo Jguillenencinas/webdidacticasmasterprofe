@@ -1,65 +1,50 @@
-$(document).ready(function() {
-  $("#testForm").submit(function(event) {
-    event.preventDefault();
-    
-    // Obtener respuestas
-    var preguntaHTML = $("#preguntaHTML").val().trim().toLowerCase();
-    var respuestaRadioCSS = $("input[name='respuestaRadioCSS']:checked").val();
-    var respuestaSelectJS = $("#respuestaSelectJS").val();
-    var respuestaCheckboxHTML = $("input[name='respuestaCheckboxHTML[]']:checked").map(function() {
-      return $(this).val();
-    }).get();
-    var respuestaSelectMultipleJS = $("#respuestaSelectMultipleJS").val();
-    
-    // Variables para almacenar respuestas correctas e incorrectas y opciones correctas
-    var respuestasCorrectas = 0;
-    var respuestasIncorrectas = 0;
-    var opcionesCorrectas = {
-      preguntaHTML: "hyper text markup language",
-      respuestaRadioCSS: "opcion1",
-      respuestaSelectJS: ["opcion1"],
-      respuestaCheckboxHTML: ["opcion1"],
-      respuestaSelectMultipleJS: ["opcion1"]
-    };
+const correctAnswers = {
+  question1: "ul",
+  question2: 3,
+  question3: "azul",
+  question4: "sí",
+  question5: 4,
+  question6: ["img", "picture"],
+  question7: "javascript",
+  question8: "html",
+  question9: "css",
+  question10: ["ul", "li", "ol"]
+};
 
-    // Calcular respuestas correctas
-    if (preguntaHTML === opcionesCorrectas.preguntaHTML) respuestasCorrectas++;
-    if (respuestaRadioCSS === opcionesCorrectas.respuestaRadioCSS) respuestasCorrectas++;
-    if (respuestaSelectJS && respuestaSelectJS.includes(opcionesCorrectas.respuestaSelectJS[0])) respuestasCorrectas++;
-    if (respuestaCheckboxHTML && respuestaCheckboxHTML.includes(opcionesCorrectas.respuestaCheckboxHTML[0])) respuestasCorrectas++;
-    if (respuestaSelectMultipleJS && respuestaSelectMultipleJS.includes(opcionesCorrectas.respuestaSelectMultipleJS[0])) respuestasCorrectas++;
-    
-    // Calcular respuestas incorrectas y mostrar opciones correctas
-    if (preguntaHTML !== opcionesCorrectas.preguntaHTML) {
-      respuestasIncorrectas++;
-      $("#preguntaHTML").val(opcionesCorrectas.preguntaHTML);
-    }
-    if (respuestaRadioCSS !== opcionesCorrectas.respuestaRadioCSS) {
-      respuestasIncorrectas++;
-      $("input[name='respuestaRadioCSS'][value='" + opcionesCorrectas.respuestaRadioCSS + "']").prop('checked', true);
-    }
-    if (respuestaSelectJS && !respuestaSelectJS.includes(opcionesCorrectas.respuestaSelectJS[0])) {
-      respuestasIncorrectas++;
-      $("#respuestaSelectJS").val(opcionesCorrectas.respuestaSelectJS[0]);
-    }
-    if (respuestaCheckboxHTML && !respuestaCheckboxHTML.includes(opcionesCorrectas.respuestaCheckboxHTML[0])) {
-      respuestasIncorrectas++;
-      $("input[name='respuestaCheckboxHTML[]'][value='" + opcionesCorrectas.respuestaCheckboxHTML[0] + "']").prop('checked', true);
-    }
-    if (respuestaSelectMultipleJS && !respuestaSelectMultipleJS.includes(opcionesCorrectas.respuestaSelectMultipleJS[0])) {
-      respuestasIncorrectas++;
-      $("#respuestaSelectMultipleJS").val(opcionesCorrectas.respuestaSelectMultipleJS);
-    }
+function submitForm() {
+  let score = 0;
+  let feedback = "";
+  const form = document.getElementById('testForm');
 
-    // Mostrar diálogo antes de mostrar el resultado
-    var mensaje = "Inténtalo de nuevo!\n\nRespuestas correctas: " + respuestasCorrectas + "\nRespuestas incorrectas: " + respuestasIncorrectas + "\n\nReinicia el test para intentarlo de nuevo (verás las respuestas corectas a continuación).";
-    alert(mensaje);
-  });
+  for (let i = 1; i <= 10; i++) {
+      const questionId = `question${i}`;
+      let userAnswer;
+      let isCorrect = false;
 
-  $("#reiniciar").click(function() {
-    // Limpiar formulario
-    $("#testForm")[0].reset();
-    // Limpiar resultado
-    $("#resultado").empty();
-  });
+      if (questionId === 'question10' || questionId === 'question6') {
+          const selectedCheckboxes = Array.from(document.querySelectorAll(`#${questionId} input:checked`)).map(checkbox => checkbox.value);
+          isCorrect = selectedCheckboxes.sort().toString() === correctAnswers[questionId].sort().toString();
+      } else if (Array.isArray(correctAnswers[questionId])) {
+          const selectedOptions = [...form[questionId].selectedOptions].map(option => option.value);
+          isCorrect = selectedOptions.sort().toString() === correctAnswers[questionId].sort().toString();
+      } else {
+          userAnswer = form[questionId].value;
+          isCorrect = userAnswer.toString().trim().toLowerCase() === correctAnswers[questionId].toString().trim().toLowerCase();
+      }
+
+      if (isCorrect) {
+          score++;
+          feedback += `<p>Pregunta ${i}: <span class="text-success">Correcto</span></p>`;
+      } else {
+          feedback += `<p>Pregunta ${i}: <span class="text-danger">Incorrecto</span></p>`;
+      }
+  }
+
+  const finalScore = (score / 10) * 100;
+  feedback += `<h5>Tu calificación: ${finalScore}%</h5>`;
+  document.getElementById('feedback').innerHTML = feedback;
+}
+
+document.getElementById('testForm').addEventListener('reset', function() {
+  document.getElementById('feedback').innerHTML = '';
 });

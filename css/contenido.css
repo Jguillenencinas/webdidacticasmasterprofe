@@ -19,8 +19,20 @@ body{
     background: #C19A6B;
     width: 360px;
     margin: auto;
+    padding-bottom: 100px;
 }
 
+.opac{
+    opacity:0;
+}
+
+.text{
+    color:black;
+}
+
+.footerPadding{
+    padding-bottom: 50px;
+}
 
 .img-content{
     width: 560px;
