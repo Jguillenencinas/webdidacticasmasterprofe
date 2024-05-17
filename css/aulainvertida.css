@@ -1,9 +1,110 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
+#metodologia{
+    text-align: center;
+}
+
 #img-aulainvertida:hover {
     filter: saturate(150%);
+    width:50%;
+    height:50%;
 }
 
 #img-aronson:hover {
     filter: saturate(150%);
+    width:50%;
+    height:50%;
+}
+
+.que-es{
+    letter-spacing:0.5ch;
+    margin-top:10%;
+    margin-bottom: 3%;
+}
+
+#que-es-aronson{
+    letter-spacing:0.5ch;
+    margin-top:4%;
+    margin-bottom: 3%;
+}
+
+.definicion{
+    font-size: large;
+}
+
+.elementos{
+    letter-spacing:0.5ch;
+    margin-top:3%; 
+    margin-bottom: 3%;
+}
+
+.ia-text{
+    margin-top:4%;
+    margin-bottom: 3%;
+    font-size: large;
+}
+
+.img-fluid{
+    width:50%; 
+    height:50%;
+}
+
+#ventajas{
+    margin-top:5%;
+}
+
+#text-ventajas{
+    font-size: large;
+    margin-bottom: 3%;
+}
+
+.enum{
+    font-weight: bold;
+    padding: 15px;
+    border-radius: 6px;
+}
+
+#enum-verde{
+    background: #e2fdf4; 
+    color: #0ebd84;
+    border: 2px solid #0ebd84; 
+}
+
+#enum-azul{
+    background: #bdf0fa; 
+    color: #0c92ac; 
+    border: 2px solid #0c92ac;
+}
+
+#enum-naranja{
+    background: #ffdfd2; 
+    color: #d5843e;
+    border: 2px solid #d5843e;
+}
+
+#enum-amarillo{
+    background: rgb(244, 232, 188); 
+    color: rgb(215, 183, 65);
+    border: 2px solid rgb(215, 183, 65);
+}
+
+#enum-morado{
+    background: #e8dbfc; 
+    color: #bb83ec;
+    border: 2px solid #bb83ec;
+}
+
+#puzzle{
+    width:50%;
+    height:50%;
+}
+
+#ventajas-pa{
+    letter-spacing:0.5ch; 
+    margin-top:5%; 
+    margin-bottom: 3%;
+}
+
+#ventajas-a{
+    margin-bottom: 3%;
 }
