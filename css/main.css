@@ -7,6 +7,10 @@ body {
     overflow-x: hidden;
 }
 
+.learnButtonbg{
+    background-color: #C19A6B;
+}
+
 .mtcontainer{
     margin-top: 100px;
 }
@@ -31,8 +35,13 @@ body {
     margin-bottom:2%;
 }
 
+.fotos{
+    margin-top:10%;
+    font-size: large;
+}
+
 .headerbg{
-    background: #C19A6B;
+    background: #a87e4a;
 }
 
 .learnHomeClassbg{

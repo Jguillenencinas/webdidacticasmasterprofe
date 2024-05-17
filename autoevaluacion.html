@@ -1,3 +1,4 @@
+[17:22] Jesús Guillén Encinas
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,11 +34,11 @@
           </div>
         </div>
       </nav>
-    </header> 
-
+    </header>
+ 
     <div class="container mt-5">
         <div class="card mtcontainer">
-            <div class="card-header bg-primary text-white">
+            <div class="card-header autoevalbg text-white">
                 <h4>Autoevaluación: contesta en minúsculas</h4>
             </div>
             <div class="card-body">
@@ -49,8 +50,14 @@
                     </div>
                     <!-- Pregunta 2 -->
                     <div class="form-group">
-                        <label for="question2">2. ¿Cuál es la última versión estable de CSS?</label>
-                        <input type="number" class="form-control" id="question2" required>
+                      <label for="question2">2. ¿Cuál es la última versión estable de CSS?</label>
+                      <select id="question2" class="form-control">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                      </select>
                     </div>
                     <!-- Pregunta 3 -->
                     <div class="form-group">
@@ -117,46 +124,32 @@
                     <!-- Pregunta 10 -->
                     <div class="form-group">
                       <label for="question10">10. ¿Cuáles de las siguientes etiquetas HTML se utilizan para crear una lista desordenada?</label>
-                      <div id="question10">
-                          <div class="form-check">
-                              <input class="form-check-input" type="checkbox" value="ul" id="ul">
-                              <label class="form-check-label" for="ul">ul</label>
-                          </div>
-                          <div class="form-check">
-                              <input class="form-check-input" type="checkbox" value="li" id="li">
-                              <label class="form-check-label" for="li">li</label>
-                          </div>
-                          <div class="form-check">
-                              <input class="form-check-input" type="checkbox" value="ol" id="ol">
-                              <label class="form-check-label" for="ol">ol</label>
-                          </div>
-                          <div class="form-check">
-                              <input class="form-check-input" type="checkbox" value="dl" id="dl">
-                              <label class="form-check-label" for="dl">dl</label>
-                          </div>
-                      </div>
-                    </div>                  
-                    <button type="button" class="btn btn-primary" onclick="submitForm()">Envia</button>
-                    <button type="reset" class="btn btn-secondary">Reiniciar</button>
+                      <select id="question10" class="form-control" multiple>
+                          <option value="ul">ul</option>
+                          <option value="li">li</option>
+                          <option value="ol">ol</option>
+                          <option value="dl">dl</option>
+                      </select>
+                  </div>               
+                    <button type="button" class="btn sendButtons" onclick="submitForm()">Enviar</button>
+                    <button type="reset" class="btn redoButtons">Reiniciar</button>
                 </form>
                 <div id="feedback" class="mt-3"></div>
             </div>
         </div>
     </div>
   
-
+ 
 <!--========================================================== -->
                         <!--FOOTER-->
 <!--========================================================== -->
-
-
+ 
+ 
 <footer class="w-100  d-flex  align-items-center justify-content-center flex-wrap">
   <p class="fs-5 px-3  pt-3">URJC Grupo F &copy; Creative Commons 2024</p>
 </footer>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+ 
     <script src="autoevaluacion.js"></script>
 </body>
 </html>
+ 

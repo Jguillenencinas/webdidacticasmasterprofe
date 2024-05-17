@@ -22,12 +22,12 @@ body{
     padding-bottom: 100px;
 }
 
-.opac{
-    opacity:0;
-}
-
 .text{
     color:black;
+}
+
+.opac{
+    opacity: 0;
 }
 
 .footerPadding{
@@ -79,6 +79,11 @@ body{
 
 .list__item--click{
     cursor: pointer;
+}
+
+.sizeLogo{
+    width: 40px;
+    height: auto;
 }
 
 .list__button{
